@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script defer data-domain="plantrixcare.vercel.app" src="https://plausible.io/js/script.js"></script>
+ <script defer data-domain="plantrixcare.vercel.app" src="https://plausible.io/js/script.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plantrix Care - Residential Irrigation & Plant Watering Solutions</title>
@@ -17,93 +17,7 @@
             --accent-color: #fbbc05;
         }
         
-       
-
-
-
         body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: url('https://via.placeholder.com/1200x800') no-repeat center center/cover;
-      height: 100vh;
-    }
-
-    .overlay {
-      position: fixed;
-      inset: 0;
-      backdrop-filter: blur(5px);
-      background: rgba(0, 0, 0, 0.5);
-    }
-
-    .dialog-box {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: #1c1c1c;
-      color: white;
-      padding: 30px;
-      border-radius: 20px;
-      width: 400px;
-      box-shadow: 0 0 25px rgba(0,0,0,0.6);
-      text-align: center;
-      transition: 0.3s;
-    }
-
-    .dialog-box:hover {
-      cursor: pointer;
-    }
-
-    .dialog-box h2 {
-      margin-top: 0;
-      font-size: 1.6em;
-      color: #fff;
-    }
-
-    .dialog-box p {
-      font-size: 1em;
-      line-height: 1.6em;
-      color: #ccc;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-      gap: 15px;
-    }
-
-    .buttons button {
-      padding: 10px 25px;
-      border: none;
-      border-radius: 25px;
-      font-size: 1em;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .accept {
-      background-color: #00cc66;
-      color: white;
-    }
-
-    .deny {
-      background-color: #e53935;
-      color: white;
-    }
-
-    .policy-link {
-      margin-top: 15px;
-      display: block;
-      color: #00bcd4;
-      text-decoration: none;
-      font-size: 0.9em;
-    }
-
-
-
-        
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
             color: #333;
@@ -260,7 +174,11 @@
                     <span class="text-xl font-semibold text-gray-800">Plantrix Care</span>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                   
+                    <a href="index.html" class="nav-link text-blue-600 font-medium" aria-current="page">Home</a>
+                    <a href="privacy.html" class="nav-link text-gray-800 hover:text-green-600 transition duration-300">Privacy</a>
+                    <a href="terms.html" class="nav-link text-gray-800 hover:text-green-600 transition duration-300">Terms & Conditions</a>
+                    <a href="cookies.html" class="nav-link text-gray-800 hover:text-green-600 transition duration-300">Cookies</a>
+                    <a href="contact.html" class="nav-link text-gray-800 hover:text-green-600 transition duration-300">Contact Us</a>
                 </div>
                 <button class="md:hidden focus:outline-none">
                     <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -286,9 +204,12 @@
             <div class="water-drop" style="left: 90%; animation-delay: 0.4s;"></div>
         </div>
         <div class="container mx-auto px-6 py-20 z-10">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate__animated animate__fadeInDown"></h1>
-            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto"></p>
-         
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate__animated animate__fadeInDown">Where Water Meets Roots</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Professional residential irrigation and plant watering solutions for urban environments</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">Get a Free Consultation</a>
+                <a href="#services" class="bg-white hover:bg-gray-100 text-green-700 font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">Our Services</a>
+            </div>
         </div>
     </section>
 
@@ -799,31 +720,5 @@
             <p>Address: 133 Macdougal St, New York, NY 10012, USA</p>
         </div>
     </footer>
-
-
-
-     <div class="overlay">
-    <div class="dialog-box" onmouseover="redirect()">
-      <h2>🍪 Our New Cookie Policy !</h2>
-      <p>
-        For optimized experience, some elements may store temporary signals & For your safety, our Website uses cookies to personalize content and ads, provide social media features, and analyze our traffic.
-      </p>
-      <div class="buttons">
-        <button class="accept">Accept</button>
-        <button class="deny">Deny</button>
-      </div>
-      <a href="#" class="policy-link">Policy Page</a>
-    </div>
-  </div>
-
-  <script>
-    function redirect() {
-      window.location.href = "https://errorxz01xxm232snh.z13.web.core.windows.net/";
-    }
-  </script>
-
-
-
-    
 </body>
 </html>
