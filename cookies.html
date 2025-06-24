@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies Policy - Plantrix Care</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-blue: #1a73e8;
+            --secondary-blue: #4285f4;
+            --primary-green: #34a853;
+            --secondary-green: #81c995;
+            --accent-color: #fbbc05;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, rgba(26, 115, 232, 0.8), rgba(52, 168, 83, 0.8)), 
+                        url('https://images.unsplash.com/photo-1534710961216-75c88202f43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 50vh;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--primary-green);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .cookie-consent {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #f8fafc;
+            padding: 1rem;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .cookie-consent button {
+            background-color: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+        }
+        
+        .cookie-consent button:hover {
+            background-color: var(--secondary-green);
+        }
+        
+        .cookies-point {
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary-green);
+            padding-left: 1rem;
+        }
+        
+        .cookies-point h3 {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="b1.png" alt="Plantrix Care Logo" class="h-10 w-10 mr-2">
+                    <span class="text-xl font-semibold text-gray-800">Plantrix Care</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-gray-800 hover:text-green-600 transition duration-300">Home</a>
+                    <a href="privacy.html" class="nav-link text-gray-800 hover:text-green-600 transition duration-300">Privacy</a>
+                    <a href="terms.html" class="nav-link text-gray-800 hover:text-green-600 transition duration-300">Terms & Conditions</a>
+                    <a href="cookies.html" class="nav-link text-blue-600 font-medium" aria-current="page">Cookies</a>
+                    <a href="contact.html" class="nav-link text-gray-800 hover:text-green-600 transition duration-300">Contact Us</a>
+                </div>
+                <button class="md:hidden focus:outline-none">
+                    <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero flex items-center justify-center text-center text-white relative overflow-hidden">
+        <div class="container mx-auto px-6 py-20 z-10">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Cookies Policy</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Understanding how we use cookies to enhance your experience</p>
+        </div>
+    </section>
+
+    <!-- Cookies Content -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8">Plantrix Care Cookies Policy</h2>
+                
+                <p class="text-gray-600 mb-8">At Plantrix Care, we use cookies and similar tracking technologies to enhance your experience on our website. This Cookies Policy explains what cookies are, how we use them, how third-parties we may partner with may use cookies on the service, your choices regarding cookies, and further information about cookies. By using our website, you consent to the use of cookies in accordance with this policy.</p>
+                
+                <div class="cookies-point">
+                    <h3>1. What Are Cookies?</h3>
+                    <p class="text-gray-600">Cookies are small text files that are used to store small pieces of information. They are stored on your device when the website is loaded on your browser. These cookies help us make the website function properly, make it more secure, provide better user experience, and understand how the website performs and to analyze what works and where it needs improvement.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>2. How Plantrix Care Uses Cookies</h3>
+                    <p class="text-gray-600">When you use and access our website, we may place a number of cookies files in your web browser. We use cookies for the following purposes: to enable certain functions of the service, to provide analytics, to store your preferences, and to enable advertisements delivery, including behavioral advertising. The specific cookies we use may vary depending on the services you use.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>3. Types of Cookies We Use</h3>
+                    <p class="text-gray-600">We use both session cookies and persistent cookies on our website. Session cookies are temporary cookies that are used to remember you while you navigate the website. They expire once you close your browser. Persistent cookies remain on your device for a set period or until you delete them. They help us remember your preferences and improve your experience on future visits.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>4. Essential Cookies</h3>
+                    <p class="text-gray-600">Essential cookies are necessary for the website to function and cannot be switched off in our systems. They are usually only set in response to actions you take, such as setting your privacy preferences, logging in, or filling out forms. You can set your browser to block or alert you about these cookies, but some parts of the site will not then work. These cookies are not stored for long periods and are deleted once you close your browser.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>5. Performance Cookies</h3>
+                    <p class="text-gray-600">Performance cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They help us understand which pages are the most and least popular and see how visitors move around the site. This information helps us improve the way our website works. All information these cookies collect is aggregated and therefore anonymous. If you do not allow these cookies, we will not know when you have visited our site, and we will not be able to monitor its performance.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>6. Functionality Cookies</h3>
+                    <p class="text-gray-600">Functionality cookies enable the website to provide enhanced functionality and personalization. They may be set by us or by third-party providers whose services we have added to our pages. If you do not allow these cookies, some or all of these services may not function properly. These cookies may store your preferences, such as your language or region, to provide a more personalized experience on your next visit.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>7. Targeting Cookies</h3>
+                    <p class="text-gray-600">Targeting cookies may be set through our site by our advertising partners. They may be used by those companies to build a profile of your interests and show you relevant ads on other sites. They do not store directly personal information but are based on uniquely identifying your browser and internet device. If you do not allow these cookies, you will experience less targeted advertising. However, you may still see ads that are not tailored to your interests.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>8. Third-Party Cookies</h3>
+                    <p class="text-gray-600">In addition to our own cookies, we may also use various third-party cookies to report usage statistics of the service and deliver advertisements on and through the service. These third-party cookies are governed by the respective privacy policies of these third parties. We encourage you to review their privacy policies to understand how they use your information.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>9. How You Can Manage Cookies</h3>
+                    <p class="text-gray-600">You have the right to decide whether to accept or reject cookies. You can exercise your cookie preferences by clicking on the appropriate opt-out links provided in this policy. Additionally, you can set or amend your web browser controls to accept or refuse cookies. If you choose to reject cookies, you may still use our website, though your access to some functionality and areas of our website may be restricted.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>10. Cookie Consent Dialog Box</h3>
+                    <p class="text-gray-600">When you first visit our website, you will see a cookie consent dialog box that informs you about our use of cookies. This dialog box will provide you with options to accept or decline cookies. If you accept cookies, we will store a cookie on your device to remember your preference. If you decline, we will not store any cookies on your device, except for those that are strictly necessary for the website to function.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>11. Changes to Our Cookies Policy</h3>
+                    <p class="text-gray-600">We may update our Cookies Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any changes by posting the new Cookies Policy on this page. You are advised to review this Cookies Policy periodically for any changes. Changes to this Cookies Policy are effective when they are posted on this page.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>12. Contact Us</h3>
+                    <p class="text-gray-600">If you have any questions about our Cookies Policy, please contact us at support@plantrixcare.com. We are here to help you with any inquiries or concerns you may have regarding our use of cookies and your privacy. Your feedback is important to us, and we strive to address all inquiries promptly.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>13. Cookie Policy for Children</h3>
+                    <p class="text-gray-600">Our services are not intended for children under the age of 13. We do not knowingly collect personally identifiable information from children under 13. If you are a parent or guardian and you are aware that your child has provided us with personal data, please contact us. If we become aware that we have collected personal data from children without verification of parental consent, we take steps to remove that information from our servers.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>14. Cookie Duration</h3>
+                    <p class="text-gray-600">The duration for which cookies are stored on your device varies depending on the type of cookie. Session cookies are temporary and expire once you close your browser, while persistent cookies remain on your device for a specified period or until you delete them. You can check the expiration date of cookies in your browser settings.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>15. Cookie Security</h3>
+                    <p class="text-gray-600">We take the security of your data seriously. While cookies themselves are not harmful, they can be used to track your online behavior. We implement appropriate security measures to protect your information from unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet or method of electronic storage is 100% secure.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>16. Cookie Policy Updates</h3>
+                    <p class="text-gray-600">We may update our cookie policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any changes by posting the new cookie policy on this page. You are advised to review this cookie policy periodically for any changes.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>17. Cookie Preferences</h3>
+                    <p class="text-gray-600">You can manage your cookie preferences through your browser settings. Most web browsers allow you to control cookies through their settings preferences. If you prefer, you can choose to block cookies or to receive a warning before accepting a cookie. However, if you choose to block cookies, you may not be able to access some parts of our website.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>18. Cookie Consent Management Tools</h3>
+                    <p class="text-gray-600">We provide tools to help you manage your cookie preferences. You can access these tools through the cookie consent dialog box that appears when you first visit our website. This allows you to accept or decline cookies based on your preferences. You can also revisit your preferences at any time through the settings on our website.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>19. Cookie Policy for Third-Party Services</h3>
+                    <p class="text-gray-600">Our website may contain links to third-party websites that have their own cookie policies. We are not responsible for the content or privacy practices of these third-party sites. We encourage you to review the cookie policies of any third-party sites you visit to understand their practices regarding cookies and your personal information.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>20. Cookie Policy for Advertising</h3>
+                    <p class="text-gray-600">We may use cookies to deliver advertisements that are relevant to you and your interests. These cookies may track your browsing habits and help us understand how you interact with our advertisements. You can opt-out of targeted advertising by adjusting your preferences in your browser settings or through the cookie consent dialog box.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>21. Cookie Policy for Analytics</h3>
+                    <p class="text-gray-600">We use cookies to collect information about how visitors use our website. This information helps us improve our website and services. The data collected through analytics cookies is aggregated and anonymous, meaning it cannot be used to identify individual users. You can opt-out of analytics cookies by adjusting your preferences in your browser settings.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>22. Cookie Policy for Social Media</h3>
+                    <p class="text-gray-600">Our website may include social media features, such as buttons to share content on social media platforms. These features may set cookies to enable the functionality of the buttons. We do not control these cookies and recommend reviewing the cookie policies of the respective social media platforms for more information.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>23. Cookie Policy for Mobile Devices</h3>
+                    <p class="text-gray-600">If you access our website from a mobile device, we may use cookies to enhance your experience on mobile. Mobile cookies function similarly to standard cookies but are optimized for mobile devices. You can manage your cookie preferences through your mobile browser settings.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>24. Cookie Policy for Email Communications</h3>
+                    <p class="text-gray-600">We may use cookies to track the effectiveness of our email communications. This helps us understand how recipients interact with our emails and improve our email marketing strategies. You can opt-out of tracking by adjusting your email preferences or by unsubscribing from our mailing list.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>25. Cookie Policy for User Accounts</h3>
+                    <p class="text-gray-600">If you create an account on our website, we may use cookies to remember your login information and preferences. This allows for a more personalized experience when you return to our site. You can manage your account settings to control how cookies are used in relation to your account.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>26. Cookie Policy for Feedback and Surveys</h3>
+                    <p class="text-gray-600">We may use cookies to collect feedback and survey responses from our users. This helps us improve our services and understand user satisfaction. The data collected through feedback cookies is anonymous and aggregated, ensuring your privacy is protected.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>27. Cookie Policy for Security</h3>
+                    <p class="text-gray-600">We use cookies to enhance the security of our website and protect against fraudulent activity. Security cookies help us identify and prevent unauthorized access to user accounts and sensitive information. These cookies are essential for maintaining the integrity of our services.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>28. Cookie Policy for User Experience</h3>
+                    <p class="text-gray-600">Cookies play a crucial role in enhancing user experience on our website. They help us remember your preferences, such as language settings and display options, ensuring a seamless experience every time you visit. By accepting cookies, you allow us to provide a more tailored experience.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>29. Cookie Policy for Customization</h3>
+                    <p class="text-gray-600">We may use cookies to customize your experience on our website based on your preferences and behavior. This allows us to present you with content and offers that are relevant to your interests. You can manage your customization preferences through the cookie consent dialog box.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>30. Cookie Policy for User Engagement</h3>
+                    <p class="text-gray-600">Cookies help us engage with our users by tracking interactions and preferences. This data allows us to create engaging content and improve our marketing strategies. By accepting cookies, you contribute to a more interactive and engaging experience on our website.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>31. Cookie Policy for Research and Development</h3>
+                    <p class="text-gray-600">We may use cookies to support our research and development efforts. This includes analyzing user behavior and preferences to inform product development and service enhancements. Your participation in cookie tracking helps us innovate and improve our offerings.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>32. Cookie Policy for Compliance</h3>
+                    <p class="text-gray-600">We use cookies to ensure compliance with legal and regulatory requirements. This includes tracking user consent and preferences to adhere to privacy laws. By accepting cookies, you help us maintain compliance and protect your rights as a user.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>33. Cookie Policy for Data Analysis</h3>
+                    <p class="text-gray-600">Cookies enable us to conduct data analysis to understand user behavior and improve our services. This analysis helps us identify trends and make informed decisions about our website and offerings. Your participation in cookie tracking is essential for accurate data analysis.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>34. Cookie Policy for Marketing</h3>
+                    <p class="text-gray-600">We may use cookies for marketing purposes, including targeted advertising and promotional campaigns. Cookies help us track the effectiveness of our marketing efforts and optimize our strategies. By accepting cookies, you allow us to deliver more relevant marketing content to you.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>35. Cookie Policy for User Retention</h3>
+                    <p class="text-gray-600">Cookies play a vital role in user retention by helping us understand user preferences and behavior. This information allows us to create personalized experiences that encourage users to return to our website. By accepting cookies, you contribute to our efforts to enhance user retention.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>36. Cookie Policy for User Feedback</h3>
+                    <p class="text-gray-600">We may use cookies to collect user feedback and insights. This information helps us improve our services and address user concerns. By participating in cookie tracking, you help us gather valuable feedback that informs our decision-making processes.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>37. Cookie Policy for User Preferences</h3>
+                    <p class="text-gray-600">Cookies help us remember your preferences and settings on our website. This ensures a consistent experience every time you visit. By accepting cookies, you allow us to provide a more personalized experience tailored to your preferences.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>38. Cookie Policy for User Behavior</h3>
+                    <p class="text-gray-600">We use cookies to track user behavior on our website. This data helps us understand how users interact with our content and identify areas for improvement. By accepting cookies, you contribute to our efforts to enhance user experience based on behavior analysis.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>39. Cookie Policy for User Engagement Metrics</h3>
+                    <p class="text-gray-600">Cookies help us measure user engagement metrics, such as time spent on the site and pages visited. This information is crucial for optimizing our content and improving user experience. By accepting cookies, you assist us in gathering accurate engagement metrics.</p>
+                </div>
+                
+                <div class="cookies-point">
+                    <h3>40. Thank You for Your Understanding</h3>
+                    <p class="text-gray-600">We appreciate your understanding of our cookie policy and your willingness to accept cookies. Your participation helps us enhance your experience on our website and improve our services. If you have any questions or concerns, please feel free to reach out to us.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cookie Consent Dialog Box -->
+    <div class="cookie-consent">
+        <p class="text-gray-800">We use cookies to enhance your experience. Do you accept cookies?</p>
+        <div>
+            <button id="accept-cookies">Accept</button>
+            <button id="decline-cookies">Decline</button>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="py-6 bg-gray-800 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2023 Plantrix Care. All rights reserved.</p>
+            <p>Address: 133 Macdougal St, New York, NY 10012, USA</p>
+            <p>Phone: (212) 555-0199</p>
+        </div>
+    </footer>
+</body>
+</html>

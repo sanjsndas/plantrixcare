@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Plantrix Care</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-blue: #1a73e8;
+            --secondary-blue: #4285f4;
+            --primary-green: #34a853;
+            --secondary-green: #81c995;
+            --accent-color: #fbbc05;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, rgba(26, 115, 232, 0.8), rgba(52, 168, 83, 0.8)), 
+                        url('https://images.unsplash.com/photo-1534710961216-75c88202f43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 50vh;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--primary-green);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .contact-point {
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary-green);
+            padding-left: 1rem;
+        }
+        
+        .contact-point h3 {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-form {
+            background-color: #f8fafc;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="b1.png" alt="Plantrix Care Logo" class="h-10 w-10 mr-2">
+                    <span class="text-xl font-semibold text-gray-800">Plantrix Care</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-gray-800 hover:text-green-600 transition duration-300">Home</a>
+                    <a href="privacy.html" class="nav-link text-gray-800 hover:text-green-600 transition duration-300">Privacy</a>
+                    <a href="terms.html" class="nav-link text-gray-800 hover:text-green-600 transition duration-300">Terms & Conditions</a>
+                    <a href="cookies.html" class="nav-link text-gray-800 hover:text-green-600 transition duration-300">Cookies</a>
+                    <a href="contact.html" class="nav-link text-blue-600 font-medium" aria-current="page">Contact Us</a>
+                </div>
+                <button class="md:hidden focus:outline-none">
+                    <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero flex items-center justify-center text-center text-white relative overflow-hidden">
+        <div class="container mx-auto px-6 py-20 z-10">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Contact Us</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">We're here to help with all your plant care needs</p>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="contact-form mb-16">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h2>
+                    <form>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" id="name" class="form-input" placeholder="Your name" required>
+                            </div>
+                            <div>
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" id="email" class="form-input" placeholder="Your email" required>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" id="phone" class="form-input" placeholder="Your phone number">
+                            </div>
+                            <div>
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" id="subject" class="form-input" placeholder="Subject" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea id="message" rows="5" class="form-input" placeholder="How can we help you?" required></textarea>
+                        </div>
+                        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 mt-4">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="contact-point">
+                    <h3>1. General Inquiries</h3>
+                    <p class="text-gray-600">For general questions about our services, products, or company, please feel free to contact us using the form above. Our customer service team is available Monday through Friday from 9:00 AM to 5:00 PM EST to assist you. We strive to respond to all inquiries within 24 hours during business days.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>2. Customer Support</h3>
+                    <p class="text-gray-600">Having issues with our products or services? Our dedicated customer support team is here to help you resolve any problems quickly and efficiently. Please provide as much detail as possible about your issue so we can serve you better. For immediate assistance, call our support line at (212) 555-0199 during business hours.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>3. Technical Support</h3>
+                    <p class="text-gray-600">For technical questions about our smart irrigation systems or other technical products, our specialized technical support team is available to assist you. Please be ready with your product model number and a description of the issue you're experiencing when contacting us. Technical support is available via phone, email, or live chat on our website.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>4. Sales Questions</h3>
+                    <p class="text-gray-600">Interested in our products or services? Our sales team can provide detailed information about pricing, features, and implementation. We can schedule a free consultation to assess your needs and recommend the best solutions. For large-scale commercial inquiries, please contact our business development department at sales@plantrixcare.com.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>5. Billing Questions</h3>
+                    <p class="text-gray-600">For questions about billing, invoices, or payment methods, please contact our billing department at billing@plantrixcare.com or call (212) 555-0199 ext. 2. Have your account number ready for faster service. Our billing specialists are available Monday through Friday from 8:00 AM to 4:00 PM EST to assist with all billing-related inquiries.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>6. Account Management</h3>
+                    <p class="text-gray-600">Need help with your online account? Our account management team can assist with password resets, account updates, and access issues. For security reasons, some account changes may require verification of identity. You can manage many account settings yourself by logging into your account dashboard on our website.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>7. Service Scheduling</h3>
+                    <p class="text-gray-600">To schedule or reschedule a service appointment, please use our online scheduling tool or call our service center at (212) 555-0199 ext. 3. We recommend scheduling at least one week in advance, though we may be able to accommodate last-minute requests depending on availability. Same-day emergency service may be available for an additional fee.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>8. Existing Service Issues</h3>
+                    <p class="text-gray-600">If you're experiencing issues with an ongoing service, please contact our service department immediately at service@plantrixcare.com or call (212) 555-0199 ext. 4. Be prepared to provide your service contract number and details about the problem. Our goal is to resolve all service issues within 48 hours of notification.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>9. Supply Orders</h3>
+                    <p class="text-gray-600">To order plant care supplies or replacement parts, please visit our online store or contact our supplies department at supplies@plantrixcare.com. Bulk orders may qualify for special pricing discounts. Most standard orders shipped within the continental U.S. arrive within 3-5 business days. Expedited shipping options are available.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>10. Installation Questions</h3>
+                    <p class="text-gray-600">Have questions about installing your Plantrix irrigation system? Our installation support team can guide you through the process or arrange professional installation. DIY installation guides are available for download on our website. For complex installations, we strongly recommend using our certified installation technicians for optimal performance.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>11. Product Registration</h3>
+                    <p class="text-gray-600">Register your Plantrix products to activate your warranty and receive important updates. You can register products online through our website or by completing and mailing in the product registration card included with your purchase. Registered products may qualify for extended warranty coverage and premium support services.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>12. Warranty Claims</h3>
+                    <p class="text-gray-600">To file a warranty claim, please contact our warranty department at warranty@plantrixcare.com with your product details and a description of the issue. Most claims require proof of purchase and product registration. Our standard warranty covers defects in materials and workmanship for one year from date of purchase, with options for extended coverage.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>13. Returns and Refunds</h3>
+                    <p class="text-gray-600">Our return policy allows most unused products to be returned within 30 days of purchase for a full refund. Please contact our returns department at returns@plantrixcare.com to initiate a return. Some items may be subject to restocking fees. Custom or special order items may not be returnable. Refunds are processed within 5-7 business days after we receive the returned item.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>14. Partnership Inquiries</h3>
+                    <p class="text-gray-600">Interested in partnering with Plantrix Care? We welcome collaborations with landscape architects, property managers, and other businesses in the green industry. Please send partnership proposals to partnerships@plantrixcare.com. Our business development team will review your inquiry and respond within 3-5 business days to discuss potential opportunities.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>15. Wholesale Inquiries</h3>
+                    <p class="text-gray-600">Landscaping professionals and retailers interested in wholesale purchasing should contact our wholesale department at wholesale@plantrixcare.com. Minimum order quantities apply for wholesale pricing. We offer volume discounts and can provide custom product configurations for large-scale projects. A wholesale application and business license may be required.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>16. Career Opportunities</h3>
+                    <p class="text-gray-600">Plantrix Care is always looking for talented individuals passionate about plant care and sustainability. View current job openings and submit applications at careers@plantrixcare.com. We offer competitive salaries, benefits, and opportunities for professional growth. Our hiring process typically includes multiple interviews and skills assessments over 2-3 weeks.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>17. Internship Programs</h3>
+                    <p class="text-gray-600">Our internship program provides hands-on experience in horticulture, environmental science, and business operations. Seasonal internships are available for students and recent graduates. Applications are accepted year-round for spring, summer, and fall sessions. Submit applications and references to internships@plantrixcare.com at least two months before your desired start date.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>18. Press Inquiries</h3>
+                    <p class="text-gray-600">Members of the media can contact our communications team at press@plantrixcare.com for company news, expert commentary, or interview requests. Please include your deadline, topic, and media outlet information in your inquiry. We strive to respond to all press inquiries within 24 hours during business days. Media kits and high-resolution images are available upon request.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>19. Speaking Engagements</h3>
+                    <p class="text-gray-600">Plantrix experts are available for speaking engagements, workshops, and panel discussions on topics related to urban agriculture, water conservation, and sustainable landscaping. Submit requests at least 30 days in advance to speaking@plantrixcare.com. Please include event details, topic preferences, audience size, and any honorarium considerations.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>20. Sponsorship Requests</h3>
+                    <p class="text-gray-600">Plantrix Care supports community events and educational initiatives aligned with our mission. For sponsorship consideration, please submit requests at least 60 days before your event to sponsorships@plantrixcare.com. Include event details, expected attendance, sponsorship levels available, and how your event aligns with our corporate values. We notify applicants within 3 weeks of submission.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>21. Educational Programs</h3>
+                    <p class="text-gray-600">Schools and community groups interested in our educational programs can contact education@plantrixcare.com. We offer classroom presentations, field trip opportunities to our urban farm, and curriculum materials on sustainable agriculture. Custom programs can be developed to meet specific learning objectives. Advance scheduling is required, especially during peak seasons.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>22. Facility Tours</h3>
+                    <p class="text-gray-600">Visit our headquarters and urban farming facilities by scheduling a guided tour. Group tours are available for professionals, students, and community organizations with at least two weeks' notice. Tours typically last 60-90 minutes and include demonstrations of our irrigation technologies. Submit tour requests to tours@plantrixcare.com with preferred dates and group size.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>23. Research Collaborations</h3>
+                    <p class="text-gray-600">Academic researchers and institutions interested in collaborating on water conservation, urban agriculture, or related studies should contact research@plantrixcare.com. We welcome opportunities to contribute data, expertise, and resources to meaningful research projects. Please include your research proposal, objectives, and institutional affiliations in your inquiry.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>24. Investor Relations</h3>
+                    <p class="text-gray-600">Investors and financial analysts can contact our investor relations team at investors@plantrixcare.com for company information, financial reports, and investment opportunities. We hold quarterly investor calls and annual meetings to discuss company performance and growth strategies. Private investors should submit requests at least 48 hours before needing information. </p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>25. Franchise Opportunities</h3>
+                    <p class="text-gray-600">Plantrix Care is expanding through franch ise opportunities. Interested parties should contact franchise@plantrixcare.com for more information on our franchise model, requirements, and application process. We provide comprehensive training and support to franchisees to ensure their success. Please include your business background and location in your inquiry.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>26. Community Engagement</h3>
+                    <p class="text-gray-600">We believe in giving back to the community. If you have ideas for community engagement initiatives or partnerships, please reach out to community@plantrixcare.com. We are particularly interested in projects that promote sustainability, education, and environmental stewardship. Include details about your organization and proposed initiatives in your message.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>27. Sustainability Initiatives</h3>
+                    <p class="text-gray-600">Plantrix Care is committed to sustainability in all aspects of our business. If you have suggestions for improving our sustainability practices or would like to collaborate on green initiatives, please contact sustainability@plantrixcare.com. We welcome innovative ideas that align with our mission to promote environmental responsibility.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>28. Customer Testimonials</h3>
+                    <p class="text-gray-600">We love hearing from our customers! If you would like to share your experience with Plantrix Care, please send your testimonial to testimonials@plantrixcare.com. Selected testimonials may be featured on our website or marketing materials. Your feedback helps us improve our services and reach more customers.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>29. Social Media Inquiries</h3>
+                    <p class="text-gray-600">Follow us on social media for the latest updates, tips, and promotions. If you have questions or comments on our social media posts, feel free to reach out via direct message or comment. Our social media team monitors all channels and will respond as quickly as possible. Connect with us on Facebook, Instagram, and Twitter.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>30. Newsletter Sign-Up</h3>
+                    <p class="text-gray-600">Stay informed about our latest news, promotions, and plant care tips by signing up for our newsletter. You can subscribe on our website or by contacting us at newsletter@plantrixcare.com. We respect your privacy and will not share your information with third parties. You can unsubscribe at any time.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>31. Event Participation</h3>
+                    <p class="text-gray-600">Plantrix Care participates in various community events and trade shows throughout the year. If you would like us to participate in your event or have questions about our involvement, please contact events@plantrixcare.com. We are always looking for opportunities to connect with our community and share our expertise.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>32. Product Development Feedback</h3>
+                    <p class="text-gray-600">We are constantly innovating and improving our products. If you have suggestions for new features or products, please reach out to productfeedback@plantrixcare.com. Your insights are invaluable in helping us create solutions that meet the needs of our customers. We appreciate your input and strive to incorporate it into our development process.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>33. Affiliate Program</h3>
+                    <p class="text-gray-600">Join our affiliate program and earn commissions by promoting Plantrix Care products. For more information, please contact affiliates@plantrixcare.com. We provide marketing materials and support to help you succeed as an affiliate partner. Our program is open to bloggers, influencers, and anyone passionate about plant care.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>34. Customer Loyalty Program</h3>
+                    <p class="text-gray-600">Join our customer loyalty program to earn rewards for your purchases. For details on how to enroll and start earning points, please contact loyalty@plantrixcare.com. Our loyalty program offers exclusive discounts, early access to new products, and special promotions for our most valued customers.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>35. Gift Cards</h3>
+                    <p class="text-gray-600">Looking for the perfect gift? Plantrix Care offers gift cards that can be purchased online. For more information on gift card options and how to purchase, please contact giftcards@plantrixcare.com. Gift cards can be used for any of our products and services, making them a great choice for plant lovers.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>36. Seasonal Promotions</h3>
+                    <p class="text-gray-600">Stay tuned for our seasonal promotions and discounts! If you have questions about upcoming sales or special offers, please contact promotions@plantrixcare.com. We regularly update our customers on the latest deals through our newsletter and social media channels.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>37. Community Workshops</h3>
+                    <p class="text-gray-600">Plantrix Care hosts community workshops on various topics related to plant care and sustainability. If you are interested in attending or would like to suggest a workshop topic, please contact workshops@plantrixcare.com. We aim to educate and empower our community through hands-on learning experiences.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>38. Environmental Advocacy</h3>
+                    <p class="text-gray-600">We are committed to advocating for environmental sustainability and conservation. If you would like to collaborate on advocacy initiatives or have suggestions for environmental projects, please reach out to advocacy@plantrixcare.com. Together, we can make a positive impact on our planet.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>39. Customer Satisfaction Surveys</h3>
+                    <p class="text-gray-600">Your feedback is important to us! We periodically conduct customer satisfaction surveys to gather insights on our services and products. If you receive a survey, please take a moment to share your thoughts. For questions about our surveys, contact feedback@plantrixcare.com.</p>
+                </div>
+                
+                <div class="contact-point">
+                    <h3>40. Thank You for Reaching Out</h3>
+                    <p class="text-gray-600">We appreciate your interest in Plantrix Care and look forward to assisting you. Your inquiries help us improve our services and better serve our customers. Thank you for taking the time to contact us, and we will respond as soon as possible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="py-6 bg-gray-800 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2023 Plantrix Care. All rights reserved.</p>
+            <p>Address: 133 Macdougal St, New York, NY 10012, USA</p>
+            <p>Phone: (212) 555-0199</p>
+        </div>
+    </footer>
+</body>
+</html>

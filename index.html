@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantrix Care - Residential Irrigation & Plant Watering Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-blue: #1a73e8;
+            --secondary-blue: #4285f4;
+            --primary-green: #34a853;
+            --secondary-green: #81c995;
+            --accent-color: #fbbc05;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, rgba(26, 115, 232, 0.8), rgba(52, 168, 83, 0.8)), 
+                        url('https://images.unsplash.com/photo-1534710961216-75c88202f43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 80vh;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--primary-green);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .water-drop {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, rgba(26, 115, 232, 0.5) 0%, rgba(26, 115, 232, 0) 70%);
+            border-radius: 50%;
+            animation: drop 2s linear infinite;
+            opacity: 0;
+        }
+        
+        @keyframes drop {
+            0% {
+                transform: translateY(-20px);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+        }
+        
+        .tip-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-green);
+        }
+        
+        .tip-card:hover {
+            border-left: 4px solid var(--primary-blue);
+            background-color: #f8f9fa;
+        }
+
+        .blog-card {
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .rating {
+            display: inline-flex;
+            flex-direction: row-reverse;
+        }
+
+        .rating input {
+            display: none;
+        }
+
+        .rating label {
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23e3e3e3' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+            background-size: 70%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .rating input:checked ~ label,
+        .rating input:checked ~ label ~ label {
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23fbbc05' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+        }
+
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .price-table th, .price-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .price-table th {
+            background-color: #f8fafc;
+            font-weight: 600;
+            color: #1e293b;
+        }
+        
+        .price-table tr:hover {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="b1.png" alt="Plantrix Care Logo" class="h-10 w-10 mr-2">
+                    <span class="text-xl font-semibold text-gray-800">Plantrix Care</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-blue-600 font-medium" aria-current="page">Home</a>
+                    <a href="privacy.html" class="nav-link text-gray-800 hover:text-green-600 transition duration-300">Privacy</a>
+                    <a href="terms.html" class="nav-link text-gray-800 hover:text-green-600 transition duration-300">Terms & Conditions</a>
+                    <a href="cookies.html" class="nav-link text-gray-800 hover:text-green-600 transition duration-300">Cookies</a>
+                    <a href="contact.html" class="nav-link text-gray-800 hover:text-green-600 transition duration-300">Contact Us</a>
+                </div>
+                <button class="md:hidden focus:outline-none">
+                    <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero flex items-center justify-center text-center text-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+            <!-- Water drop animations -->
+            <div class="water-drop" style="left: 10%; animation-delay: 0s;"></div>
+            <div class="water-drop" style="left: 20%; animation-delay: 0.5s;"></div>
+            <div class="water-drop" style="left: 30%; animation-delay: 1s;"></div>
+            <div class="water-drop" style="left: 40%; animation-delay: 1.5s;"></div>
+            <div class="water-drop" style="left: 50%; animation-delay: 0.2s;"></div>
+            <div class="water-drop" style="left: 60%; animation-delay: 0.7s;"></div>
+            <div class="water-drop" style="left: 70%; animation-delay: 1.2s;"></div>
+            <div class="water-drop" style="left: 80%; animation-delay: 1.7s;"></div>
+            <div class="water-drop" style="left: 90%; animation-delay: 0.4s;"></div>
+        </div>
+        <div class="container mx-auto px-6 py-20 z-10">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate__animated animate__fadeInDown">Where Water Meets Roots</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Professional residential irrigation and plant watering solutions for urban environments</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">Get a Free Consultation</a>
+                <a href="#services" class="bg-white hover:bg-gray-100 text-green-700 font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">About Plantrix Care</h2>
+                <div class="w-20 h-1 bg-green-500 mx-auto"></div>
+            </div>
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 relative">
+                    <img src="b1.png" alt="Our Team" class="rounded-lg shadow-xl w-full">
+                    <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg hidden md:block">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-800">60000+</p>
+                                <p class="text-sm text-gray-600">Plants Watered</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Our Story</h3>
+                    <p class="text-gray-600 mb-4">Founded in 2015 by a group of horticulture enthusiasts, Plantrix Care began as a small neighborhood service with a simple mission: to provide sustainable irrigation solutions for urban environments. Our founders, all graduates of Cornell University's School of Integrative Plant Science, recognized the growing need for efficient plant care solutions in New York City's dense urban landscape.</p>
+                    
+                    <p class="text-gray-600 mb-4">What started as a modest operation servicing just a few blocks in Greenwich Village has grown into New York's premier residential plant care provider, now serving all five boroughs. Our team has expanded to include over 50 certified horticulturists, irrigation specialists, and plant care technicians, each bringing their unique expertise to our comprehensive service offerings.</p>
+                    
+                    <p class="text-gray-600 mb-6">We combine cutting-edge irrigation technology with time-tested plant care techniques to ensure your greenery thrives in even the most challenging urban conditions. Our proprietary Plantrix Water Optimization System (PWOS) has been recognized by the Urban Horticulture Society for its innovative approach to water conservation while maintaining plant health.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Our Mission</h4>
+                    <p class="text-gray-600 mb-4">At Plantrix Care, we're committed to revolutionizing urban plant care through sustainable practices, technological innovation, and deep horticultural knowledge. We believe that every urban space deserves thriving plant life, and we're dedicated to making that vision a reality through our comprehensive services.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Our Values</h4>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Sustainability</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Innovation</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none, stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Expertise</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" view Box 0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Community</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Reliability</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700">Education</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition duration-300">Learn More About Our Team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Comprehensive Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Comprehensive irrigation and plant care solutions tailored to your urban environment</p>
+                <div class="w-20 h-1 bg-blue-500 mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="s1.jpeg" alt="Smart Irrigation" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-blue-600 opacity-20"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Smart Irrigation Systems</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Our IoT-enabled irrigation systems represent the cutting edge of plant care technology. These intelligent systems automatically adjust watering schedules based on real-time weather forecasts, precise soil moisture readings, and the specific needs of your plants. By continuously monitoring environmental conditions, our systems optimize water usage while ensuring your plants receive exactly what they need to thrive.</p>
+                        
+                        <h4 class="font-semibold text-gray-800 mb-2">Key Features:</h4>
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">Weather-based adjustments for optimal watering</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">Remote monitoring and control via mobile app</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">Up to 40% water savings compared to traditional methods</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="text-blue-600 font-medium inline-flex items-center hover:text-blue-800 transition duration-300">
+                            Learn more
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="s2.jpeg" alt="Plant Care" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-blue-600 opacity-20"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Plant Care & Maintenance</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Our team of experts provides tailored plant care services, ensuring your plants receive the right nutrients and care they need to thrive. We understand that each plant species has unique requirements, and our specialists are trained to identify and address these needs effectively.</p>
+                        
+                        <h4 class="font-semibold text-gray-800 mb-2">Our Services Include:</h4>
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">Customized care plans based on plant species</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">Pest and disease management strategies</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">Seasonal plant care adjustments</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="text-blue-600 font-medium inline-flex items-center hover:text-blue-800 transition duration-300">
+                            Learn more
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="s3.jpeg" alt="Irrigation Installation" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-blue-600 opacity-20"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Irrigation Installation</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">We specialize in the installation of efficient irrigation systems that ensure your plants receive the right amount of water without waste. Our team assesses your specific landscape and plant needs to design a customized irrigation solution that maximizes efficiency and minimizes water usage.</p>
+                        
+                        <h4 class="font-semibold text-gray-800 mb-2">Installation Services Include:</h4>
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">Drip and sprinkler systems tailored to your garden</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">Water-efficient solutions that reduce waste</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">Professional installation by certified technicians</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="text-blue-600 font-medium inline-flex items-center hover:text-blue-800 transition duration-300">
+                            Learn more
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Additional Service 1 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="s4.jpeg" alt="Landscape Design" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-blue-600 opacity-20"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Landscape Design</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Our landscape design services focus on creating beautiful, functional outdoor spaces that enhance your property. We work closely with you to understand your vision and bring it to life with thoughtful design and plant selection.</p>
+                        
+                        <h4 class="font-semibold text-gray-800 mb-2">Design Services Include:</h4>
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">Custom landscape design tailored to your space</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">Plant selection based on your preferences and environment</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">Ongoing support and maintenance for your landscape</span>
+                            </li>
+                        </ </ul>
+                        <a href="#contact" class="text-blue-600 font-medium inline-flex items-center hover:text-blue-800 transition duration-300">
+                            Learn more
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Additional Service 2 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="s5.jpeg" alt="Garden Maintenance" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-blue-600 opacity-20"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Garden Maintenance</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Our garden maintenance services ensure that your outdoor space remains beautiful and healthy throughout the year. We offer regular maintenance packages that include weeding, pruning, and seasonal planting.</p>
+                        
+                        <h4 class="font-semibold text-gray-800 mb-2">Maintenance Services Include:</h4>
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">Regular weeding and soil care</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">Pruning and trimming of plants</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">Seasonal planting and garden design updates</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="text-blue-600 font-medium inline-flex items-center hover:text-blue-800 transition duration-300">
+                            Learn more
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price List Section -->
+    <section id="pricing" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Pricing</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Transparent pricing for all our services to help you make informed decisions</p>
+                <div class="w-20 h-1 bg-green-500 mx-auto mt-4"></div>
+            </div>
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Smart Irrigation Systems</td>
+                        <td>$500 - $1500</td>
+                    </tr>
+                    <tr>
+                        <td>Plant Care & Maintenance</td>
+                        <td>$100/month</td>
+                    </tr>
+                    <tr>
+                        <td>Irrigation Installation</td>
+                        <td>$300 - $800</td>
+                    </tr>
+                    <tr>
+                        <td>Landscape Design</td>
+                        <td>$1000 - $3000</td>
+                    </tr>
+                    <tr>
+                        <td>Garden Maintenance</td>
+                        <td>$150/month</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section id="feedback" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Customer Feedback</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">What our clients say about us</p>
+                <div class="w-20 h-1 bg-green-500 mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-gray-100 p-6 rounded-lg shadow-md">
+                    <p class="text-gray-600 mb-4">"Plantrix Care transformed my garden! Their irrigation system is efficient and easy to manage. Highly recommend!"</p>
+                    <h4 class="font-bold text-gray-800">- Sarah J.</h4>
+                </div>
+                <div class="testimonial-card bg-gray-100 p-6 rounded-lg shadow-md">
+                    <p class="text-gray-600 mb-4">"The team at Plantrix Care is knowledgeable and friendly. My plants have never looked better!"</p>
+                    <h4 class="font-bold text-gray-800">- Mark T.</h4>
+                </div>
+                <div class="testimonial-card bg-gray-100 p-6 rounded-lg shadow-md">
+                    <p class="text-gray-600 mb-4">"I love the personalized care they provide. My indoor plants are thriving!"</p>
+                    <h4 class="font-bold text-gray-800">- Emily R.</h4>
+                </div>
+                <div class="testimonial-card bg-gray-100 p-6 rounded-lg shadow-md">
+                    <p class="text-gray-600 mb-4">"Plantrix Care has been a game changer for my balcony garden. Their tips and services are invaluable!"</p>
+                    <h4 class="font-bold text-gray-800">- John D.</h4>
+                </div>
+                <div class="testimonial-card bg-gray-100 p-6 rounded-lg shadow-md">
+                    <p class="text-gray-600 mb-4">"I appreciate the attention to detail and the eco-friendly practices they implement. Highly satisfied!"</p>
+                    <h4 class="font-bold text-gray-800">- Lisa M.</h4>
+                </div>
+                <div class="testimonial-card bg-gray-100 p-6 rounded-lg shadow-md">
+                    <p class="text-gray-600 mb-4">"Their customer service is top-notch! They really care about their clients and their plants." </p>
+                    <h4 class="font-bold text-gray-800">- Tom S.</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips Section -->
+    <section id="tips" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Plant Care Tips</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Simple tips to keep your plants healthy and thriving</p>
+                <div class="w-20 h-1 bg-blue-500 mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="tip-card bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="font-bold text-gray-800 mb-2">Watering</h3>
+                    <p class="text-gray-600">Always check the soil moisture before watering. Overwatering can be just as harmful as underwatering. Use a moisture meter for accurate readings.</p>
+                </div>
+                <div class="tip-card bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="font-bold text-gray-800 mb-2">Sunlight</h3>
+                    <p class="text-gray-600">Different plants have different light requirements. Make sure to place your plants in the right spot, considering their specific needs for sunlight exposure.</p>
+                </div>
+                <div class="tip-card bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="font-bold text-gray-800 mb-2">Fertilizing</h3>
+                    <p class="text-gray-600">Use organic fertilizers to provide essential nutrients without harming the environment. Follow the recommended schedule for your specific plant types.</p>
+                </div>
+                <div class="tip-card bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="font-bold text-gray-800 mb-2">Pruning</h3>
+                    <p class="text-gray-600">Regular pruning helps promote healthy growth and prevents overcrowding. Learn the best techniques for each plant species to ensure optimal results.</p>
+                </div>
+                <div class="tip-card bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="font-bold text-gray-800 mb-2">Pest Control</h3>
+                    <p class="text-gray-600">Monitor your plants regularly for signs of pests. Use natural remedies or consult with our experts for effective pest management solutions.</p>
+                </div>
+                <div class="tip-card bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="font-bold text-gray-800 mb-2">Seasonal Care</h3>
+                    <p class="text-gray-600">Adjust your care routine with the changing seasons. Different plants have varying needs throughout the year, so stay informed and adapt accordingly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Latest Blogs</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Insights and tips from our experts to help you with your plant care journey</p>
+                <div class="w-20 h-1 bg-green-500 mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="blog-card bg-gray-100 p-6 rounded-lg shadow-md">
+                    <h3 class="font-bold text-gray-800 mb-2">The Benefits of Indoor Plants</h3>
+                    <p class="text-gray-600 mb-4">Indoor plants not only beautify your space but also improve air quality and boost your mood. Discover the best plants for your home.</p>
+                    <a href="#" class="text-blue-600 font-medium inline-flex items-center hover:text-blue-800 transition duration-300">
+                        Read more
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="blog-card bg-gray-100 p-6 rounded-lg shadow-md">
+                    <h3 class="font-bold text-gray-800 mb-2">Watering Tips for Different Plants</h3>
+                    <p class="text-gray-600 mb-4">Learn how to properly water various types of plants to ensure they thrive. Overwatering and underwatering can both be detrimental.</p>
+                    <a href="#" class="text-blue-600 font-medium inline-flex items-center hover:text-blue-800 transition duration-300">
+                        Read more
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="blog-card bg-gray-100 p-6 rounded-lg shadow-md">
+                    <h3 class="font-bold text-gray-800 mb-2">Choosing the Right Fertilizer</h3>
+                    <p class="text-gray-600 mb-4">Fertilizers can make a significant difference in plant health. Find out which fertilizers are best for your specific plants.</p>
+                    <a href="#" class="text-blue-600 font-medium inline-flex items-center hover:text-blue-800 transition duration-300">
+                        Read more
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disclaimer Section -->
+    <section class="py-8 bg-gray-200">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600">Disclaimer: The information provided on this website is for general informational purposes only. Plantrix Care does not guarantee the accuracy or completeness of any information on this site. Always consult with a professional for specific plant care advice.</p>
+        </div>
+    </section>
+
+    <!-- Customer Satisfaction Section -->
+    <section class="py-8 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Customer Satisfaction</h2>
+            <p class="text-gray-600">At Plantrix Care, we prioritize our customers' satisfaction. Your feedback helps us improve our services and ensure that your plants receive the best care possible. We are committed to providing exceptional service and building lasting relationships with our clients.</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="py-6 bg-gray-800 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2023 Plantrix Care. All rights reserved.</p>
+            <p>Address: 133 Macdougal St, New York, NY 10012, USA</p>
+        </div>
+    </footer>
+</body>
+</html>
